@@ -1,16 +1,16 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import AuthorizationStack from './src/navigations/AuthorizationStack';
-import { Theme } from './src/styles/theme';
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { Provider } from 'react-redux'
+import RootNavigation from '~/navigations/RootNavigation'
+import { store } from '~/store'
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer theme={Theme}>
-        <AuthorizationStack />
-      </NavigationContainer>
-    </SafeAreaProvider>
-  );
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <RootNavigation />
+      </SafeAreaProvider>
+    </Provider>
+  )
 }
 
-export default App;
+export default App

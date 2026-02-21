@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { ThemeColors } from "~/styles/theme";
+import { StyleSheet } from "react-native"
+import { ThemeColors } from "~/styles/theme"
 
 export default (colors: ThemeColors) => StyleSheet.create({
     container: {
@@ -25,5 +25,13 @@ export default (colors: ThemeColors) => StyleSheet.create({
         fontSize: 14,
         marginTop: 4,
         fontWeight: 500
+    },
+    icon: {
+        position: 'absolute',
+        right: 16,
+        top: 36,
+    },
+    passwordContainer: {
+        position: 'relative',
     }
 })

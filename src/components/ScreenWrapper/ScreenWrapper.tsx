@@ -1,15 +1,17 @@
-import { PropsWithChildren } from "react"
-import { View } from "react-native"
-import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { PropsWithChildren } from 'react'
+import { View, ViewStyle } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import makeStyles from './ScreenWrapper.style'
 
-const ScreenWrapper = ({ children }: PropsWithChildren) => {
-    const { top, bottom } = useSafeAreaInsets()
+type Props = {
+  customStyle?: ViewStyle;
+} & PropsWithChildren;
 
-    return (
-        <View style={{ flex: 1, paddingTop: top + 20, paddingBottom: bottom + 20 }} >
-            {children}
-        </View>
-    )
+const ScreenWrapper = ({ children, customStyle }: Props) => {
+  const { top, bottom } = useSafeAreaInsets()
+  const styles = makeStyles(top, bottom)
+
+  return <View style={[styles.container, customStyle]}>{children}</View>
 }
 
 export default ScreenWrapper

@@ -1,5 +1,20 @@
+export enum NavigationStacks {
+  AuthStack = 'AuthStack',
+  CalendarStack = 'CalendarStack',
+  BottomTab = 'BottomTab',
+}
+
 export enum NavigationScreens {
-    Initial = "Initial",
-    SignIn = 'SignIn',
-    SignUp = 'SignUp'
+  // Auth
+  Initial = 'Initial',
+  SignIn = 'SignIn',
+  SignUp = 'SignUp',
+
+  // Calendar
+  Calendar = 'Calendar',
+  Profile = 'Profile',
+}
+
+export enum NavigationModals {
+  CalendarEventForm = 'CalendarEventForm',
 }
